@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KidCare Clinic — Hospital Management System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================================================
+  PUBLIC SITE
+======================================================= -->
+<div id="public-site">
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-brand" href="#" onclick="showSection('home')">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-5h-1V9h3zm0-8h-2V6h2z"/></svg>
+    </div>
+    <span class="nav-brand-text">Kid<span>Care</span> Clinic</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="#" onclick="showSection('home')">Home</a>
+    <a class="nav-link" href="#" onclick="showSection('about')">About</a>
+    <a class="nav-link" href="#" onclick="showSection('services')">Services</a>
+    <a class="nav-link" href="#" onclick="showSection('doctors')">Doctors</a>
+    <a class="nav-link" href="#" onclick="showSection('contact')">Contact</a>
+    <a class="nav-cta" href="#" onclick="openLoginModal()">Staff Login</a>
+    <a class="nav-cta" href="#" onclick="showSection('booking')" style="background:#00796b; margin-left:4px;">Book Appointment</a>
+  </div>
+</nav>
+
+<!-- HOME SECTION -->
+<div id="sec-home">
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Accepting new patients · Est. 2010</span>
+      </div>
+      <h1>Advanced Care<br>for <em>Every Child</em></h1>
+      <p class="hero-sub">KidCare Clinic delivers world-class pediatric medical services with cutting-edge diagnostic technology, compassionate specialists, and a patient-first philosophy rooted in evidence-based medicine.</p>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="showSection('booking')">📅 Book Appointment</button>
+        <button class="btn-hero-secondary" onclick="showSection('services')">Our Services →</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon" style="background:rgba(25,118,210,0.15)">📊</div>
+        <div class="hero-card-num">2,400+</div>
+        <div class="hero-card-label">Patients treated this year</div>
+        <div class="hero-card-bar"><div class="hero-card-fill" style="width:82%"></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="background:rgba(0,121,107,0.15)">👨‍⚕️</div>
+        <div class="hero-card-num">5</div>
+        <div class="hero-card-label">Specialist doctors</div>
+        <div class="hero-card-bar"><div class="hero-card-fill" style="width:100%;background:#26a69a"></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="background:rgba(245,158,11,0.15)">⭐</div>
+        <div class="hero-card-num">4.9</div>
+        <div class="hero-card-label">Patient satisfaction score</div>
+        <div class="hero-card-bar"><div class="hero-card-fill" style="width:98%;background:#f59e0b"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item"><div class="stat-num">14+</div><div class="stat-label">Years of Excellence</div></div>
+    <div class="stat-item"><div class="stat-num">12,000+</div><div class="stat-label">Patients Served</div></div>
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Specialist Departments</div></div>
+    <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">Success Rate</div></div>
+  </div>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">Our Specialties</div>
+    <div class="section-title">Comprehensive Pediatric Care</div>
+    <p class="section-sub">From routine check-ups to complex surgical procedures, our team provides complete healthcare for your child.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon" style="background:#e3f2fd">🩺</div>
+        <h3>General Pediatrics</h3>
+        <p>Routine wellness checks, growth monitoring, developmental assessments and management of common childhood illnesses.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#e8f5e9">🧠</div>
+        <h3>Child Development</h3>
+        <p>Developmental screening, behavioral health, autism spectrum evaluations, and cognitive development support.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#f3e5f5">💉</div>
+        <h3>Vaccination & Prevention</h3>
+        <p>Comprehensive immunization programs following WHO and national immunization schedules for all age groups.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#fff8e1">🔬</div>
+        <h3>Diagnostics & Lab</h3>
+        <p>In-house pathology, radiology, and advanced diagnostic imaging with same-day results for urgent cases.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#fce4ec">🏥</div>
+        <h3>Pediatric Surgery</h3>
+        <p>Minimally invasive surgical procedures by certified pediatric surgeons in a fully equipped operating theatre.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#e0f2f1">👶</div>
+        <h3>Neonatal Care</h3>
+        <p>Specialized NICU care for premature and critically ill newborns with round-the-clock neonatology support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /sec-home -->
+
+<!-- ABOUT SECTION -->
+<div id="sec-about" style="display:none; padding-top:64px;">
+  <section class="section">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <div class="section-tag">About KidCare</div>
+          <h2 class="section-title">A Legacy of Pediatric Excellence</h2>
+          <p style="color:var(--text-3); line-height:1.7; margin-bottom:16px;">Founded in 2010, KidCare Clinic has been a beacon of pediatric healthcare in the region. Our state-of-the-art facility combines medical innovation with compassionate, family-centered care.</p>
+          <p style="color:var(--text-3); line-height:1.7; margin-bottom:20px;">We believe every child deserves access to the best medical expertise. Our multidisciplinary team collaborates to deliver outcomes that meet international clinical standards.</p>
+          <ul class="about-checklist">
+            <li><div class="about-check">✓</div>ISO 9001 Certified Medical Facility</li>
+            <li><div class="about-check">✓</div>24/7 Emergency Pediatric Services</li>
+            <li><div class="about-check">✓</div>Board-certified specialists in all departments</li>
+            <li><div class="about-check">✓</div>HIPAA-compliant patient data management</li>
+            <li><div class="about-check">✓</div>Cutting-edge diagnostic technology</li>
+          </ul>
+        </div>
+        <div class="about-img">
+          <div class="about-img-stat"><div class="n">14+</div><div class="l">Years Active</div></div>
+          <div class="about-img-stat"><div class="n">5</div><div class="l">Departments</div></div>
+          <div class="about-img-stat"><div class="n">12K+</div><div class="l">Patients</div></div>
+          <div class="about-img-stat"><div class="n">4.9★</div><div class="l">Avg Rating</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SERVICES SECTION (standalone) -->
+<div id="sec-services" style="display:none; padding-top:64px;">
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Medical Services</div>
+      <div class="section-title">What We Offer</div>
+      <p class="section-sub">Complete spectrum of pediatric healthcare from preventive care to complex interventions.</p>
+      <div class="services-grid">
+        <div class="service-card"><div class="service-icon" style="background:#e3f2fd">🩺</div><h3>General Pediatrics</h3><p>Routine wellness, growth monitoring, illness management for children of all ages.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#e8f5e9">🧠</div><h3>Child Development</h3><p>Developmental screening, behavioral therapy, autism evaluations, learning support.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#f3e5f5">💉</div><h3>Vaccination</h3><p>Full national immunization schedule, travel vaccines, and prevention programs.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#fff8e1">🔬</div><h3>Diagnostics</h3><p>Advanced lab, imaging, and diagnostic services with rapid turnaround.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#fce4ec">🏥</div><h3>Pediatric Surgery</h3><p>Minimally invasive and open surgical procedures by specialized surgeons.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#e0f2f1">👶</div><h3>Neonatal Care</h3><p>NICU, preterm care, neonatology consultations and newborn screening.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#ede7f6">🦷</div><h3>Pediatric Dentistry</h3><p>Preventive and restorative dental care specifically designed for children.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#e1f5fe">❤️</div><h3>Cardiology</h3><p>Congenital heart disease evaluation, ECG, and pediatric cardiology consults.</p></div>
+        <div class="service-card"><div class="service-icon" style="background:#f9fbe7">🫁</div><h3>Pulmonology</h3><p>Asthma management, respiratory infections, lung function testing for children.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- DOCTORS PUBLIC PAGE -->
+<div id="sec-doctors" style="display:none; padding-top:64px;">
+  <section class="section alt">
+    <div class="section-inner">
+      <div class="section-tag">Our Medical Team</div>
+      <div class="section-title">Expert Pediatric Specialists</div>
+      <p class="section-sub">Our team of board-certified pediatric specialists brings decades of combined experience.</p>
+      <div class="doctors-grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="doctor-card">
+          <div class="doctor-avatar" style="background:#1565c0">SA</div>
+          <h3>Dr. Sarah Ahmed</h3>
+          <div class="spec">MBBS, DCH, FCPS</div>
+          <div class="dept">General Pediatrics</div>
+          <p style="font-size:0.78rem;color:var(--text-3);margin-top:10px;line-height:1.5">8 years of experience in general pediatric care, growth assessment and management of childhood diseases.</p>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-avatar" style="background:#00796b">AK</div>
+          <h3>Dr. Ali Khan</h3>
+          <div class="spec">MBBS, MD, Child Psych</div>
+          <div class="dept">Child Development</div>
+          <p style="font-size:0.78rem;color:var(--text-3);margin-top:10px;line-height:1.5">Specialized in developmental pediatrics, autism spectrum disorders, and early intervention programs.</p>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-avatar" style="background:#7b1fa2">HM</div>
+          <h3>Dr. Hina Malik</h3>
+          <div class="spec">MBBS, MCPS, MPH</div>
+          <div class="dept">Vaccination & Prevention</div>
+          <p style="font-size:0.78rem;color:var(--text-3);margin-top:10px;line-height:1.5">Expert in immunization programs, preventive pediatrics and community health for children.</p>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-avatar" style="background:#b71c1c">AR</div>
+          <h3>Dr. Ahmed Raza</h3>
+          <div class="spec">MBBS, MS (Peds Surgery)</div>
+          <div class="dept">Pediatric Surgery</div>
+          <p style="font-size:0.78rem;color:var(--text-3);margin-top:10px;line-height:1.5">Specialist in minimally invasive pediatric surgery with over 12 years of surgical excellence.</p>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-avatar" style="background:#e65100">FN</div>
+          <h3>Dr. Fatima Noor</h3>
+          <div class="spec">MBBS, FCPS (Neonatal)</div>
+          <div class="dept">Neonatal & Pediatric Surgery</div>
+          <p style="font-size:0.78rem;color:var(--text-3);margin-top:10px;line-height:1.5">Subspecialized in neonatal surgery and critical care for premature infants and complex cases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT SECTION -->
+<div id="sec-contact" style="display:none; padding-top:64px;">
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Get in Touch</div>
+      <div class="section-title">Contact KidCare Clinic</div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info">
+            <h3>Clinic Information</h3>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div><h4>Address</h4><p>42 Medical Complex, Gulberg III, Lahore, Punjab 54000</p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div><h4>Phone</h4><p>+92-42-3571-0000 (Main)<br>+92-300-1234567 (Emergency)</p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div><h4>Email</h4><p>info@kidcareclinic.pk<br>appointments@kidcareclinic.pk</p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div><h4>Hours</h4><p>Mon–Sat: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 2:00 PM (Emergency Only)</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:24px">Send us a Message</h3>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-control" placeholder="Your name"></div>
+            <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-control" placeholder="+92..."></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-control" placeholder="your@email.com"></div>
+          <div class="form-group"><label class="form-label">Subject</label><input type="text" class="form-control" placeholder="How can we help?"></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="form-control" rows="4" placeholder="Your message..."></textarea></div>
+          <button class="btn btn-primary" onclick="showToast('Message sent! We will contact you shortly.','success')">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- APPOINTMENT BOOKING PUBLIC -->
+<div id="sec-booking" style="display:none; padding-top:64px;">
+  <div class="booking-section">
+    <div class="section-inner" style="max-width:1200px">
+      <div class="section-tag">Online Booking</div>
+      <div class="section-title">Schedule an Appointment</div>
+      <p class="section-sub" style="margin-bottom:40px">Choose your preferred doctor, date and time. Our staff will confirm within 2 hours.</p>
+      <div class="booking-card">
+        <div id="booking-form-area">
+          <div class="booking-steps">
+            <div class="step-item active" id="bstep1"><div class="step-num">1</div><div class="step-label">Doctor & Patient</div></div>
+            <div class="step-divider"></div>
+            <div class="step-item" id="bstep2"><div class="step-num">2</div><div class="step-label">Date & Time</div></div>
+            <div class="step-divider"></div>
+            <div class="step-item" id="bstep3"><div class="step-num">3</div><div class="step-label">Confirm</div></div>
+          </div>
+
+          <div id="bform-step1">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Patient Name *</label>
+                <input type="text" class="form-control" id="b-patient-name" placeholder="Child's full name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Parent / Guardian Name *</label>
+                <input type="text" class="form-control" id="b-parent-name" placeholder="Parent's name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Contact Number *</label>
+                <input type="tel" class="form-control" id="b-contact" placeholder="+92...">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Age of Child</label>
+                <input type="text" class="form-control" id="b-age" placeholder="e.g. 5 years">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Select Department</label>
+              <select class="form-control" id="b-dept" onchange="filterDoctors()">
+                <option value="">All Departments</option>
+                <option>General Pediatrics</option>
+                <option>Child Development</option>
+                <option>Vaccination & Preventive Care</option>
+                <option>Pediatric Surgery</option>
+                <option>Neonatal & Pediatric Surgery</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Select Doctor *</label>
+              <select class="form-control" id="b-doctor">
+                <option value="">-- Select Doctor --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Reason for Visit</label>
+              <textarea class="form-control" id="b-reason" rows="3" placeholder="Brief description of symptoms or purpose of visit..."></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="bookingStep2()">Continue to Date & Time →</button>
+          </div>
+
+          <div id="bform-step2" style="display:none">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Preferred Date *</label>
+                <input type="date" class="form-control" id="b-date" onchange="loadTimeSlots()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Doctor</label>
+                <input type="text" class="form-control" id="b-doctor-display" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Available Time Slots</label>
+              <div class="time-slots" id="time-slots-grid"></div>
+            </div>
+            <div style="display:flex;gap:12px;margin-top:20px">
+              <button class="btn btn-outline" onclick="bookingBackStep1()">← Back</button>
+              <button class="btn btn-primary" onclick="bookingStep3()">Review Booking →</button>
+            </div>
+          </div>
+
+          <div id="bform-step3" style="display:none">
+            <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--navy)">Review Your Appointment</h3>
+            <div class="appt-summary" id="booking-summary"></div>
+            <div style="display:flex;gap:12px;margin-top:24px">
+              <button class="btn btn-outline" onclick="bookingBackStep2()">← Back</button>
+              <button class="btn btn-success" onclick="confirmBooking()">✓ Confirm Appointment</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="booking-success-area" style="display:none" class="booking-success">
+          <div class="booking-success-icon">✅</div>
+          <h2>Appointment Booked!</h2>
+          <p style="margin-bottom:8px">Your appointment reference: <strong id="booking-ref" style="font-family:var(--font-mono);color:var(--blue-light)"></strong></p>
+          <p>Our staff will confirm your appointment within 2 hours. Please arrive 15 minutes early.</p>
+          <button class="btn btn-primary" style="margin-top:24px" onclick="resetBooking()">Book Another →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2024 KidCare Clinic · All rights reserved · Multan Road Medical Complex, Punjab, Pakistan</p>
+  <p style="margin-top:4px">📞 +92-42-3571-0000 · ✉ info@kidcareclinic.pk</p>
+</footer>
+
+</div><!-- /public-site -->
+
+<!-- ── LOGIN MODAL ── -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">Staff Login</div>
+      <button class="modal-close" onclick="closeLoginModal()">✕</button>
+    </div>
+    <div class="role-tabs">
+      <button class="role-tab active" onclick="setLoginRole('admin',this)">🛡 Admin</button>
+      <button class="role-tab" onclick="setLoginRole('doctor',this)">👨‍⚕️ Doctor</button>
+    </div>
+    <div class="login-hint" id="login-hint">
+      <strong>Admin:</strong> admin@kidcare.pk / admin123<br>
+      <strong>Doctors:</strong> sarah@kidcare.pk / doc123 (etc.)
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="login-email" placeholder="staff@kidcare.pk">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" id="login-password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+    </div>
+    <button class="btn-login" onclick="doLogin()">Sign In →</button>
+    <div class="login-error" id="login-error">Invalid credentials. Please try again.</div>
+  </div>
+</div>
+
+<!-- ======================================================
+  ADMIN / DOCTOR APP
+======================================================= -->
+<div id="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-5h-1V9h3zm0-8h-2V6h2z"/></svg>
+      </div>
+      <div class="sidebar-brand-text">KidCare<small>Management System</small></div>
+    </div>
+
+    <!-- ADMIN NAV -->
+    <div id="admin-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Overview</div>
+        <button class="sidebar-link active" onclick="showPanel('dashboard',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </button>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Management</div>
+        <button class="sidebar-link" onclick="showPanel('doctors-mgmt',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Doctors
+        </button>
+        <button class="sidebar-link" onclick="showPanel('patients-mgmt',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Patients
+        </button>
+        <button class="sidebar-link" onclick="showPanel('appointments-mgmt',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Appointments
+        </button>
+        <button class="sidebar-link" onclick="showPanel('schedule-mgmt',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Schedule
+        </button>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Analytics</div>
+        <button class="sidebar-link" onclick="showPanel('reports',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Reports
+        </button>
+      </div>
+    </div>
+
+    <!-- DOCTOR NAV -->
+    <div id="doctor-nav" style="display:none">
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">My Portal</div>
+        <button class="sidebar-link active" onclick="showPanel('doc-dashboard',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </button>
+        <button class="sidebar-link" onclick="showPanel('doc-appointments',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          My Appointments
+        </button>
+        <button class="sidebar-link" onclick="showPanel('doc-patients',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          My Patients
+        </button>
+        <button class="sidebar-link" onclick="showPanel('doc-schedule',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          My Schedule
+        </button>
+        <button class="sidebar-link" onclick="showPanel('doc-notes',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Notes & Records
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebar-avatar-text">A</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebar-user-name">Admin</div>
+          <div class="sidebar-user-role" id="sidebar-user-role">Administrator</div>
+        </div>
+        <button class="btn-logout" onclick="doLogout()">Logout</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <div class="topbar">
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-right">
+        <div class="topbar-date" id="topbar-date"></div>
+        <span class="badge-notify" id="notif-badge" style="display:none">3</span>
+      </div>
+    </div>
+
+    <div class="page-content">
+
+      <!-- ═══ ADMIN DASHBOARD ═══ -->
+      <div class="panel active" id="panel-dashboard">
+        <div class="page-header">
+          <div class="page-title">Dashboard Overview</div>
+          <div class="page-sub">Welcome back. Here's what's happening at KidCare today.</div>
+        </div>
+
+        <div class="stat-cards">
+          <div class="stat-card blue">
+            <div class="stat-card-header">
+              <div class="stat-card-icon blue">👨‍⚕️</div>
+              <span class="stat-card-trend up">Active</span>
+            </div>
+            <div class="stat-card-num" id="stat-doctors">5</div>
+            <div class="stat-card-label">Total Doctors</div>
+          </div>
+          <div class="stat-card teal">
+            <div class="stat-card-header">
+              <div class="stat-card-icon teal">👤</div>
+              <span class="stat-card-trend up" id="stat-patients-trend">↑ 12%</span>
+            </div>
+            <div class="stat-card-num" id="stat-patients">0</div>
+            <div class="stat-card-label">Total Patients</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-card-header">
+              <div class="stat-card-icon amber">📅</div>
+              <span class="stat-card-trend warn" id="stat-today-trend">Today</span>
+            </div>
+            <div class="stat-card-num" id="stat-today">0</div>
+            <div class="stat-card-label">Today's Appointments</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-card-header">
+              <div class="stat-card-icon green">✅</div>
+              <span class="stat-card-trend up">↑ Total</span>
+            </div>
+            <div class="stat-card-num" id="stat-total-appts">0</div>
+            <div class="stat-card-label">Total Appointments</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Appointments (Last 7 Days) <small>Weekly Trend</small></div>
+            <div class="chart-container"><canvas id="chart-weekly"></canvas></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Appointments by Department <small>Distribution</small></div>
+            <div class="chart-container"><canvas id="chart-dept"></canvas></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Today's Appointments <small id="today-date-label"></small></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Time</th><th>Patient</th><th>Doctor</th><th>Status</th></tr></thead>
+                <tbody id="today-appts-table"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Recent Notifications</div>
+            <div class="notif-list" id="notif-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DOCTORS MANAGEMENT ═══ -->
+      <div class="panel" id="panel-doctors-mgmt">
+        <div class="page-header" style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div class="page-title">Doctor Management</div>
+            <div class="page-sub">Add, edit and manage clinic physicians</div>
+          </div>
+          <button class="btn btn-primary" onclick="openDoctorModal()">+ Add Doctor</button>
+        </div>
+        <div class="card">
+          <div class="toolbar">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" class="form-control" id="search-doctors" placeholder="Search doctors..." oninput="renderDoctorsTable()">
+            </div>
+            <select class="form-control" style="width:180px" id="filter-dept" onchange="renderDoctorsTable()">
+              <option value="">All Departments</option>
+              <option>General Pediatrics</option>
+              <option>Child Development</option>
+              <option>Vaccination & Preventive Care</option>
+              <option>Pediatric Surgery</option>
+              <option>Neonatal & Pediatric Surgery</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>ID</th><th>Doctor</th><th>Qualification</th><th>Department</th><th>Contact</th><th>Experience</th><th>Schedule</th><th>Actions</th></tr></thead>
+              <tbody id="doctors-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PATIENTS MANAGEMENT ═══ -->
+      <div class="panel" id="panel-patients-mgmt">
+        <div class="page-header" style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div class="page-title">Patient Management</div>
+            <div class="page-sub">Search, view and manage patient records</div>
+          </div>
+          <button class="btn btn-primary" onclick="openPatientModal()">+ Add Patient</button>
+        </div>
+        <div class="card">
+          <div class="toolbar">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" class="form-control" id="search-patients" placeholder="Search by name, ID, contact..." oninput="renderPatientsTable()">
+            </div>
+            <select class="form-control" style="width:140px" id="filter-gender" onchange="renderPatientsTable()">
+              <option value="">All Genders</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>ID</th><th>Patient</th><th>Age</th><th>Gender</th><th>Parent</th><th>Contact</th><th>Medical Notes</th><th>Actions</th></tr></thead>
+              <tbody id="patients-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ APPOINTMENTS MANAGEMENT ═══ -->
+      <div class="panel" id="panel-appointments-mgmt">
+        <div class="page-header" style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div class="page-title">Appointment Management</div>
+            <div class="page-sub">Create, approve and manage all appointments</div>
+          </div>
+          <button class="btn btn-primary" onclick="openApptModal()">+ New Appointment</button>
+        </div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="toolbar">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" class="form-control" id="search-appts" placeholder="Search appointments..." oninput="renderApptsTable()">
+            </div>
+            <select class="form-control" style="width:160px" id="filter-appt-status" onchange="renderApptsTable()">
+              <option value="">All Statuses</option>
+              <option>Pending</option>
+              <option>Approved</option>
+              <option>Completed</option>
+              <option>Cancelled</option>
+            </select>
+            <input type="date" class="form-control" style="width:160px" id="filter-appt-date" onchange="renderApptsTable()">
+            <button class="btn btn-outline btn-sm" onclick="document.getElementById('filter-appt-date').value='';renderApptsTable()">Clear</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Department</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody id="appts-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SCHEDULE MANAGEMENT ═══ -->
+      <div class="panel" id="panel-schedule-mgmt">
+        <div class="page-header">
+          <div class="page-title">Schedule Management</div>
+          <div class="page-sub">Manage doctor availability, working hours and blocked dates</div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Doctor Schedule Configuration</div>
+            <div class="form-group">
+              <label class="form-label">Select Doctor</label>
+              <select class="form-control" id="sched-doctor-select" onchange="renderDoctorSchedule()">
+                <option value="">-- Select Doctor --</option>
+              </select>
+            </div>
+            <div id="sched-editor" style="display:none">
+              <div class="form-group">
+                <label class="form-label">Working Days</label>
+                <div style="display:flex;gap:8px;flex-wrap:wrap" id="sched-days"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Start Time</label>
+                  <select class="form-control" id="sched-start">
+                    <option>09:00</option><option>10:00</option><option>11:00</option>
+                    <option>13:00</option><option>14:00</option><option>15:00</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">End Time</label>
+                  <select class="form-control" id="sched-end">
+                    <option>13:00</option><option>14:00</option><option>16:00</option>
+                    <option>17:00</option><option selected>18:00</option><option>20:00</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Block Date</label>
+                <input type="date" class="form-control" id="sched-block-date">
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <button class="btn btn-primary" onclick="saveSchedule()">Save Schedule</button>
+                <button class="btn btn-outline" onclick="addBlockedDate()">Block Date</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Weekly Appointments Overview</div>
+            <div id="sched-view">
+              <div class="schedule-grid" id="schedule-weekly-grid"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:20px">
+          <div class="card-title">Blocked Dates</div>
+          <div id="blocked-dates-list"></div>
+        </div>
+      </div>
+
+      <!-- ═══ REPORTS ═══ -->
+      <div class="panel" id="panel-reports">
+        <div class="page-header">
+          <div class="page-title">Analytics & Reports</div>
+          <div class="page-sub">Performance insights, statistics and export options</div>
+        </div>
+        <div class="report-controls">
+          <span style="font-size:0.85rem;font-weight:600;color:var(--text-3)">Period:</span>
+          <button class="period-btn active" onclick="setReportPeriod('daily',this)">Daily</button>
+          <button class="period-btn" onclick="setReportPeriod('weekly',this)">Weekly</button>
+          <button class="period-btn" onclick="setReportPeriod('monthly',this)">Monthly</button>
+          <button class="btn btn-outline btn-sm" style="margin-left:auto" onclick="showToast('Report exported as PDF','success')">⬇ Export PDF</button>
+        </div>
+        <div class="stat-cards">
+          <div class="stat-card blue"><div class="stat-card-header"><div class="stat-card-icon blue">📊</div></div><div class="stat-card-num" id="rep-total">0</div><div class="stat-card-label">Period Appointments</div></div>
+          <div class="stat-card green"><div class="stat-card-header"><div class="stat-card-icon green">✅</div></div><div class="stat-card-num" id="rep-completed">0</div><div class="stat-card-label">Completed</div></div>
+          <div class="stat-card amber"><div class="stat-card-header"><div class="stat-card-icon amber">⏳</div></div><div class="stat-card-num" id="rep-pending">0</div><div class="stat-card-label">Pending</div></div>
+          <div class="stat-card teal"><div class="stat-card-header"><div class="stat-card-icon teal">👤</div></div><div class="stat-card-num" id="rep-new-patients">0</div><div class="stat-card-label">New Patients</div></div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Monthly Appointments Trend</div>
+            <div class="chart-container"><canvas id="chart-monthly"></canvas></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Doctor Performance</div>
+            <div id="doctor-performance"></div>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top:20px">
+          <div class="card">
+            <div class="card-title">Patient Demographics</div>
+            <div class="chart-container"><canvas id="chart-demographics"></canvas></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Appointment Status Distribution</div>
+            <div class="chart-container"><canvas id="chart-status"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DOCTOR DASHBOARD ═══ -->
+      <div class="panel" id="panel-doc-dashboard">
+        <div class="page-header">
+          <div class="page-title" id="doc-dash-title">Doctor Dashboard</div>
+          <div class="page-sub">Your daily overview and upcoming appointments</div>
+        </div>
+        <div class="stat-cards">
+          <div class="stat-card blue"><div class="stat-card-header"><div class="stat-card-icon blue">📅</div></div><div class="stat-card-num" id="doc-stat-today">0</div><div class="stat-card-label">Today's Appointments</div></div>
+          <div class="stat-card teal"><div class="stat-card-header"><div class="stat-card-icon teal">⏭</div></div><div class="stat-card-num" id="doc-stat-upcoming">0</div><div class="stat-card-label">Upcoming</div></div>
+          <div class="stat-card green"><div class="stat-card-header"><div class="stat-card-icon green">👤</div></div><div class="stat-card-num" id="doc-stat-patients">0</div><div class="stat-card-label">My Patients</div></div>
+          <div class="stat-card amber"><div class="stat-card-header"><div class="stat-card-icon amber">✍️</div></div><div class="stat-card-num" id="doc-stat-notes">0</div><div class="stat-card-label">Notes Written</div></div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Today's Appointments</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Time</th><th>Patient</th><th>Age</th><th>Reason</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody id="doc-today-table"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Upcoming Appointments</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Date</th><th>Time</th><th>Patient</th><th>Status</th></tr></thead>
+                <tbody id="doc-upcoming-table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DOCTOR APPOINTMENTS ═══ -->
+      <div class="panel" id="panel-doc-appointments">
+        <div class="page-header">
+          <div class="page-title">My Appointments</div>
+          <div class="page-sub">Manage and update appointment statuses</div>
+        </div>
+        <div class="card">
+          <div class="toolbar">
+            <div class="search-box"><span class="search-icon">🔍</span><input type="text" class="form-control" id="doc-search-appts" placeholder="Search..." oninput="renderDocAppts()"></div>
+            <select class="form-control" style="width:160px" id="doc-filter-status" onchange="renderDocAppts()">
+              <option value="">All Statuses</option>
+              <option>Pending</option><option>Approved</option><option>Completed</option><option>Cancelled</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Date</th><th>Time</th><th>Patient</th><th>Age</th><th>Reason</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody id="doc-appts-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DOCTOR PATIENTS ═══ -->
+      <div class="panel" id="panel-doc-patients">
+        <div class="page-header">
+          <div class="page-title">My Patients</div>
+          <div class="page-sub">Patient records assigned to you</div>
+        </div>
+        <div class="card">
+          <div class="toolbar"><div class="search-box"><span class="search-icon">🔍</span><input type="text" class="form-control" id="doc-search-patients" placeholder="Search patients..." oninput="renderDocPatients()"></div></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Patient</th><th>Age</th><th>Gender</th><th>Parent</th><th>Contact</th><th>Last Visit</th><th>Notes</th></tr></thead>
+              <tbody id="doc-patients-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DOCTOR SCHEDULE ═══ -->
+      <div class="panel" id="panel-doc-schedule">
+        <div class="page-header">
+          <div class="page-title">My Schedule</div>
+          <div class="page-sub">View your availability and upcoming slots</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Weekly Schedule</div>
+          <div class="schedule-grid" id="doc-schedule-grid"></div>
+        </div>
+      </div>
+
+      <!-- ═══ DOCTOR NOTES ═══ -->
+      <div class="panel" id="panel-doc-notes">
+        <div class="page-header" style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div class="page-title">Patient Notes & Records</div>
+            <div class="page-sub">Add and view clinical notes for your patients</div>
+          </div>
+          <button class="btn btn-primary" onclick="openNoteModal()">+ Add Note</button>
+        </div>
+        <div class="card">
+          <div id="notes-list"></div>
+        </div>
+      </div>
+
+    </div><!-- /page-content -->
+  </div><!-- /main-content -->
+</div><!-- /app -->
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- Doctor Modal -->
+<div class="modal-full-overlay" id="doctor-modal">
+  <div class="modal-full">
+    <div class="modal-full-header">
+      <div class="modal-full-title" id="doctor-modal-title">Add New Doctor</div>
+      <button class="modal-close" onclick="closeDoctorModal()">✕</button>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-control" id="d-name"></div>
+      <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-control" id="d-email"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-control" id="d-phone"></div>
+      <div class="form-group"><label class="form-label">Qualification</label><input type="text" class="form-control" id="d-qual" placeholder="MBBS, FCPS..."></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Specialization</label><input type="text" class="form-control" id="d-spec"></div>
+      <div class="form-group">
+        <label class="form-label">Department *</label>
+        <select class="form-control" id="d-dept">
+          <option>General Pediatrics</option>
+          <option>Child Development</option>
+          <option>Vaccination & Preventive Care</option>
+          <option>Pediatric Surgery</option>
+          <option>Neonatal & Pediatric Surgery</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Experience (years)</label><input type="number" class="form-control" id="d-exp" min="0"></div>
+      <div class="form-group"><label class="form-label">Schedule</label><input type="text" class="form-control" id="d-schedule" placeholder="Mon-Fri 9AM-5PM"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-control" id="d-password" placeholder="Leave blank to keep existing"></div>
+    <div style="display:flex;gap:12px;margin-top:8px">
+      <button class="btn btn-primary" onclick="saveDoctor()">Save Doctor</button>
+      <button class="btn btn-outline" onclick="closeDoctorModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Patient Modal -->
+<div class="modal-full-overlay" id="patient-modal">
+  <div class="modal-full">
+    <div class="modal-full-header">
+      <div class="modal-full-title" id="patient-modal-title">Add New Patient</div>
+      <button class="modal-close" onclick="closePatientModal()">✕</button>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Patient Name *</label><input type="text" class="form-control" id="p-name"></div>
+      <div class="form-group"><label class="form-label">Age</label><input type="text" class="form-control" id="p-age" placeholder="e.g. 5 years"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Gender</label>
+        <select class="form-control" id="p-gender"><option>Male</option><option>Female</option></select>
+      </div>
+      <div class="form-group"><label class="form-label">Parent / Guardian</label><input type="text" class="form-control" id="p-parent"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Contact Number</label><input type="tel" class="form-control" id="p-contact"></div>
+      <div class="form-group"><label class="form-label">Address</label><input type="text" class="form-control" id="p-address"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Medical Notes</label><textarea class="form-control" id="p-notes" rows="3" placeholder="Allergies, chronic conditions, medications..."></textarea></div>
+    <div style="display:flex;gap:12px;margin-top:8px">
+      <button class="btn btn-primary" onclick="savePatient()">Save Patient</button>
+      <button class="btn btn-outline" onclick="closePatientModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Appointment Modal -->
+<div class="modal-full-overlay" id="appt-modal">
+  <div class="modal-full">
+    <div class="modal-full-header">
+      <div class="modal-full-title" id="appt-modal-title">New Appointment</div>
+      <button class="modal-close" onclick="closeApptModal()">✕</button>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Patient *</label>
+        <select class="form-control" id="a-patient"></select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Doctor *</label>
+        <select class="form-control" id="a-doctor" onchange="loadModalSlots()"></select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Date *</label>
+        <input type="date" class="form-control" id="a-date" onchange="loadModalSlots()">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Time Slot *</label>
+        <select class="form-control" id="a-time"></select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Status</label>
+      <select class="form-control" id="a-status">
+        <option>Pending</option><option>Approved</option><option>Completed</option><option>Cancelled</option>
+      </select>
+    </div>
+    <div class="form-group"><label class="form-label">Notes</label><textarea class="form-control" id="a-notes" rows="2" placeholder="Reason for visit or admin notes..."></textarea></div>
+    <div style="display:flex;gap:12px;margin-top:8px">
+      <button class="btn btn-primary" onclick="saveAppt()">Save Appointment</button>
+      <button class="btn btn-outline" onclick="closeApptModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Note Modal -->
+<div class="modal-full-overlay" id="note-modal">
+  <div class="modal-full" style="width:520px">
+    <div class="modal-full-header">
+      <div class="modal-full-title">Add Clinical Note</div>
+      <button class="modal-close" onclick="closeNoteModal()">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Patient *</label>
+      <select class="form-control" id="note-patient"></select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Appointment</label>
+      <select class="form-control" id="note-appt"><option>Select (optional)</option></select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Diagnosis / Observation</label>
+      <input type="text" class="form-control" id="note-diagnosis" placeholder="Primary diagnosis...">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Clinical Note *</label>
+      <textarea class="form-control" id="note-text" rows="4" placeholder="Detailed clinical observations, treatment plan, prescriptions..."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Treatment Status</label>
+      <select class="form-control" id="note-status">
+        <option>Ongoing</option><option>Follow-up required</option><option>Resolved</option><option>Referred</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:8px">
+      <button class="btn btn-primary" onclick="saveNote()">Save Note</button>
+      <button class="btn btn-outline" onclick="closeNoteModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- ======================================================
+  JAVASCRIPT
+======================================================= -->
+<script src="app.js"></script>
+</body>
+</html>
+Done

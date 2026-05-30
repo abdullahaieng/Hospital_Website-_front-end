@@ -1,0 +1,4 @@
+Doctors: sarah@kidcare.pk / doc123
+ali@kidcare.pk / doc123  |  hina@kidcare.pk / doc123
+ahmed@kidcare.pk / doc123  |  fatima@kidcare.pk / doc123
+Admin: admin@kidcare.pk / admin123
