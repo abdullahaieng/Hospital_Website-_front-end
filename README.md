@@ -1,10 +1,13 @@
-KidCare Clinic Management System
+## KidCare Clinic Management System
 
 A professional and responsive Hospital Management System developed using HTML, CSS, JavaScript, and Chart.js. The project combines a modern clinic website with an integrated management dashboard for administrators and doctors.
 
 Overview
 
 KidCare Clinic Management System is designed to streamline hospital and clinic operations by providing:
+
+
+# Live :https://kidcareclinic-chi.vercel.app/
 
 Public-facing clinic website
 Online appointment booking
